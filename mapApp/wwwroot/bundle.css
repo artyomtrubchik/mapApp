@@ -1,0 +1,107 @@
+.filter {
+  padding-top: 30px; }
+
+.addressListContainer {
+  width: 80%;
+  grid-row: 3/8;
+  margin: auto;
+  padding: 20px 0px; }
+  .addressListContainer .addressList {
+    min-height: 200px;
+    background-color: white;
+    box-shadow: 0px 1px 5px -1px;
+    padding: 10px 10px;
+    border: 1px solid grey; }
+    .addressListContainer .addressList:focus {
+      box-shadow: 0px 1px 10px -1px;
+      border: 1px solid green; }
+    .addressListContainer .addressList .addressListInput {
+      border: none;
+      width: 100%; }
+      .addressListContainer .addressList .addressListInput:focus {
+        outline: none;
+        background-color: white;
+        color: black; }
+  .addressListContainer .clearAll {
+    font-size: 0.8em;
+    width: 50px;
+    color: grey;
+    margin-bottom: 10px;
+    cursor: pointer; }
+  .addressListContainer .addressItem, .addressListContainer .addressItemFocused {
+    height: 45px;
+    border-radius: 20px;
+    background-color: ghostwhite;
+    padding: 8px 10px;
+    border: 1px solid grey;
+    margin-bottom: 10px;
+    box-shadow: 0px 1px 2px -1px; }
+    .addressListContainer .addressItem:focus-within, .addressListContainer .addressItemFocused:focus-within {
+      background-color: white; }
+    .addressListContainer .addressItem:active, .addressListContainer .addressItemFocused:active {
+      box-shadow: 0px 1px 10px -1px;
+      border: 1px solid green; }
+    .addressListContainer .addressItem .delete, .addressListContainer .addressItem .edit, .addressListContainer .addressItemFocused .delete, .addressListContainer .addressItemFocused .edit {
+      display: inline; }
+    .addressListContainer .addressItem .delete:before, .addressListContainer .addressItem .edit:before, .addressListContainer .addressItemFocused .delete:before, .addressListContainer .addressItemFocused .edit:before {
+      content: '';
+      cursor: pointer;
+      height: 24px;
+      width: 22px;
+      display: inline-block;
+      float: right;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain; }
+    .addressListContainer .addressItem .delete:before, .addressListContainer .addressItemFocused .delete:before {
+      background-image: url("/images/baseline-delete-24px.svg"); }
+    .addressListContainer .addressItem .edit:before, .addressListContainer .addressItemFocused .edit:before {
+      background-image: url("/images/baseline-edit-24px.svg"); }
+  .addressListContainer .addressItemFocused {
+    background-color: white; }
+
+.addressInputContainer {
+  grid-row: 2/3; }
+
+.inputWrapper {
+  display: block;
+  margin: auto;
+  width: 80%;
+  height: 50px;
+  border-radius: 20px;
+  background-color: ghostwhite;
+  padding: 10px 10px;
+  border: 1px solid grey; }
+  .inputWrapper:focus-within {
+    background-color: white;
+    transition: box-shadow 200ms;
+    box-shadow: 0px 1px 2px 0px grey; }
+  .inputWrapper:hover {
+    transition: box-shadow 200ms;
+    box-shadow: 0px 1px 2px 0px grey; }
+  .inputWrapper .addressInput {
+    border: none;
+    width: 100%;
+    height: 30px;
+    background-color: ghostwhite;
+    color: grey; }
+    .inputWrapper .addressInput:focus {
+      outline: none;
+      background-color: white;
+      color: black; }
+
+.main {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); }
+
+.map {
+  grid-column: 5/13; }
+
+.formContainer {
+  grid-column: 1/5;
+  display: grid;
+  grid-template-rows: repeat(12, 1fr);
+  overflow-y: scroll; }

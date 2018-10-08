@@ -1,0 +1,87 @@
+﻿.addressListContainer {
+    width: 80%;
+    grid-row: 3/8;
+    margin: auto;
+    padding: 20px 0px;
+
+
+    .addressList {
+        min-height: 200px;
+        background-color: white;
+        box-shadow: 0px 1px 5px -1px;
+        padding: 10px 10px;
+        border: 1px solid grey;
+
+        &:focus {
+            box-shadow: 0px 1px 10px -1px;
+            border: 1px solid green;
+        }
+
+        .addressListInput {
+            border: none;
+            width:100%;
+
+            &:focus {
+                outline: none;
+                background-color: white;
+                color: black;
+            }
+        }
+    }
+
+
+    .clearAll {
+        font-size: 0.8em;
+        width: 50px;
+        color: grey;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+
+    .addressItem, .addressItemFocused {
+        height: 45px;
+        border-radius: 20px;
+        background-color: ghostwhite;
+        padding: 8px 10px;
+        border: 1px solid grey;
+        margin-bottom: 10px;
+        box-shadow: 0px 1px 2px -1px;
+
+        &:focus-within {
+            background-color: white;
+        }
+
+        &:active {
+            box-shadow: 0px 1px 10px -1px;
+            border: 1px solid green;
+        }
+
+        .delete, .edit {
+            display: inline;
+        }
+
+        .delete:before, .edit:before {
+            content: '';
+            cursor: pointer;
+            height: 24px;
+            width: 22px;
+            display: inline-block;
+            float: right;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .delete:before {
+            background-image: url('/images/baseline-delete-24px.svg');
+        }
+
+        .edit:before {
+            background-image: url('/images/baseline-edit-24px.svg');
+        }
+    }
+
+    .addressItemFocused{
+        background-color: white;
+    }
+}
