@@ -19,7 +19,7 @@
 
         .addressListInput {
             border: none;
-            width:100%;
+            width: 80%;
 
             &:focus {
                 outline: none;
@@ -56,11 +56,11 @@
             border: 1px solid green;
         }
 
-        .delete, .edit {
+        .delete, .edit, .close {
             display: inline;
         }
 
-        .delete:before, .edit:before {
+        .delete:before, .edit:before, .close:before {
             content: '';
             cursor: pointer;
             height: 24px;
@@ -79,9 +79,13 @@
         .edit:before {
             background-image: url('/images/baseline-edit-24px.svg');
         }
+
+        .close:before {
+            background-image: url('/images/baseline-close-24px.svg');
+        }
     }
 
-    .addressItemFocused{
+    .addressItemFocused {
         background-color: white;
     }
 }

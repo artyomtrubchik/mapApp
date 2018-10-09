@@ -17,7 +17,7 @@
       border: 1px solid green; }
     .addressListContainer .addressList .addressListInput {
       border: none;
-      width: 100%; }
+      width: 80%; }
       .addressListContainer .addressList .addressListInput:focus {
         outline: none;
         background-color: white;
@@ -41,9 +41,9 @@
     .addressListContainer .addressItem:active, .addressListContainer .addressItemFocused:active {
       box-shadow: 0px 1px 10px -1px;
       border: 1px solid green; }
-    .addressListContainer .addressItem .delete, .addressListContainer .addressItem .edit, .addressListContainer .addressItemFocused .delete, .addressListContainer .addressItemFocused .edit {
+    .addressListContainer .addressItem .delete, .addressListContainer .addressItem .edit, .addressListContainer .addressItem .close, .addressListContainer .addressItemFocused .delete, .addressListContainer .addressItemFocused .edit, .addressListContainer .addressItemFocused .close {
       display: inline; }
-    .addressListContainer .addressItem .delete:before, .addressListContainer .addressItem .edit:before, .addressListContainer .addressItemFocused .delete:before, .addressListContainer .addressItemFocused .edit:before {
+    .addressListContainer .addressItem .delete:before, .addressListContainer .addressItem .edit:before, .addressListContainer .addressItem .close:before, .addressListContainer .addressItemFocused .delete:before, .addressListContainer .addressItemFocused .edit:before, .addressListContainer .addressItemFocused .close:before {
       content: '';
       cursor: pointer;
       height: 24px;
@@ -57,6 +57,8 @@
       background-image: url("/images/baseline-delete-24px.svg"); }
     .addressListContainer .addressItem .edit:before, .addressListContainer .addressItemFocused .edit:before {
       background-image: url("/images/baseline-edit-24px.svg"); }
+    .addressListContainer .addressItem .close:before, .addressListContainer .addressItemFocused .close:before {
+      background-image: url("/images/baseline-close-24px.svg"); }
   .addressListContainer .addressItemFocused {
     background-color: white; }
 

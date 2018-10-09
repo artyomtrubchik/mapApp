@@ -41963,6 +41963,10 @@ class AddressList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
         this.props.updateAddressOrder(addresses);
     }
 
+    stopEditing() {
+        this.setState({ editAddress: "", editAddressId: null });
+    }
+
     editItem(index) {
         this.setState({ editAddressId: index });
     }
@@ -41981,7 +41985,7 @@ class AddressList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
                 if (address.id == this.state.editAddressId) address.address = this.state.editAddress;
                 return address;
             });
-            this.setState({ editAddress: "", editAddressId: null });
+            this.stopEditing();
             this.props.updateAddressOrder(addresses);
         }
     }
@@ -42023,11 +42027,18 @@ class AddressList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
                                     className: item.id === this.state.editAddressId ? "addressItemFocused" : "addressItem",
                                     ref: provided.innerRef
                                 }, provided.draggableProps, provided.dragHandleProps),
-                                item.id === this.state.editAddressId ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { className: "addressListInput", value: this.state.editAddress, onChange: e => {
-                                        this.handleItemChange(e);
-                                    }, onKeyDown: e => {
-                                        this.handleItemKeyDown(e);
-                                    } }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                item.id === this.state.editAddressId ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "div",
+                                    null,
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { className: "addressListInput", value: this.state.editAddress, onChange: e => {
+                                            this.handleItemChange(e);
+                                        }, onKeyDown: e => {
+                                            this.handleItemKeyDown(e);
+                                        } }),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "close", onClick: () => {
+                                            this.stopEditing();
+                                        } })
+                                ) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     "div",
                                     null,
                                     item.address,

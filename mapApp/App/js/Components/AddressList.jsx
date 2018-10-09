@@ -44,7 +44,10 @@ class AddressList extends Component {
         this.props.updateAddressOrder(addresses);
     }
 
-
+    stopEditing() {
+        this.setState({ editAddress: "", editAddressId: null });
+    }
+   
 
     editItem(index) {      
         this.setState({ editAddressId: index})
@@ -64,7 +67,7 @@ class AddressList extends Component {
                 if (address.id == this.state.editAddressId) address.address = this.state.editAddress;
                 return address;
             })
-            this.setState({ editAddress: "", editAddressId: null });
+            this.stopEditing();
             this.props.updateAddressOrder(addresses);
           
         }       
@@ -93,8 +96,14 @@ class AddressList extends Component {
                                                 {...provided.draggableProps}
                                                 {...provided.dragHandleProps}                                           
                                             >
-                                                {item.id === this.state.editAddressId ? <input className="addressListInput" value={this.state.editAddress} onChange={(e) => { this.handleItemChange(e) }} onKeyDown={(e) => { this.handleItemKeyDown(e) }} />
-                                                    : <div>
+                                                {item.id === this.state.editAddressId
+                                                    ? 
+                                                    <div>
+                                                        <input className="addressListInput" value={this.state.editAddress} onChange={(e) => { this.handleItemChange(e) }} onKeyDown={(e) => { this.handleItemKeyDown(e) }} />
+                                                        <div className="close" onClick={() => { this.stopEditing() }}></div>
+                                                    </div>                                                   
+                                                    :
+                                                    <div>
                                                         {item.address}
                                                         <div className="delete" onClick={() => { this.removeItem(index) }}></div>
                                                         <div className="edit" onClick={() => { this.editItem(item.id) }}></div>
